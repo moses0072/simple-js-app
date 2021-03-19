@@ -16,9 +16,8 @@ let pokemonList = [
         types: ['bug' , 'flying']
     }
 ];
-//for loop to display the contant of the PokemonList array
+//forEach function to display the contant of the PokemonList array
 let text = ' -- Wow, that\'s big! ';
-//for (let i = 0; i < pokemonList.length; i++){
     pokemonList.forEach(function(list){
     if (list.height > 5){
         document.write('<strong>', list.name + ' ' + '(height: ' + list.height +') ' + ' ' + list.types[0] + ' ' + list.types[1] + ' ' + text, '</strong>','<br>');
@@ -26,5 +25,5 @@ let text = ' -- Wow, that\'s big! ';
         document.write('<strong>', list.name + ' ' + '(height: ' + list.height + ') ','</strong>','<br>');
     } else {
         document.write('<strong>', list.name + ' ' + '(height: ' + list.height + ')','</strong>');
-    }
+    };
 });
