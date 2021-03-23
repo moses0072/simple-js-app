@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+.button-class{
+    /* overwrites browser defoults and reset the border */
+    
+    display: inline-block;
+    /*Take the font from the outer container(In this case its the body)*/
+    font-family: inherit;
+    /* Styles the background color, font color and text decoration of the botun*/
+    background-color:#4caf50;
+    color: black;
+    border: 2px solid green;
+    cursor: pointer;
+    text-decoration: none;
+    /* adds spacing to the button*/
+    padding: 10px 32px;
+    border-radius: 3px;
+    font-size: 16px;
+    margin: 4px 2px;
+    /*gives the button a bottom border with a width of 2 px
+    of solid, and a color in RGBA format*/
+    /*border-bottom: 2px solid rgba(0, 0, 0, 0.3);*/
+    /* duration and property transitions*/
+    transition: 0.2s opacity;
+}
+.pokemon-list{
+  list-style-type: none;
+}
