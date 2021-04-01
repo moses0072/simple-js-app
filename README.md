@@ -7,4 +7,6 @@ Built a smalljavaScript App about 'Pokemon' called 'Pokedex'. The app should dis
 
 **API** fetched a list of pokemon from 'https://pokeapi.co/api/v2/pokemon/' 
 
-**Modal** The pokemon information should display on the Modal. Once the user close, outside the modal or escape taste clicked, the modal shoul closed.
+**Bootstrap-Modal** The pokemon information(Name, height and image) should display on the Modal. Once the user 'close', outside the modal or escape key clicked, the modal should be closed.
+
+**Bootstrap-nav** is created to search for any Pokemon displayed in the list.
