@@ -19,7 +19,9 @@ let pokemonRepository = (function(){
     button.addClass('btn btn-primary btn' );
     listItem.append(button);
     button.append(pokemon.name);
+    button.on('click', function(){
     showDetails(pokemon);
+  });
   }
   //execute the details of clicked pokemon as a promise on console 
   function showDetails(pokemon){
@@ -28,7 +30,6 @@ let pokemonRepository = (function(){
     //Calling the Modal
     showModal(pokemon);  
     });
-  
   }
 
 
