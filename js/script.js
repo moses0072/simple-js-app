@@ -105,20 +105,19 @@ let pokemonRepository = (function(){
       modalBody.append(imageElementBack);
       modalBody.append(heightElement);
   }
-  //Searching the displayed Pokemon list
-  searchPok.addEventListener('input', function(){
-    let pokemonList = $('.list-group-item');
-    let searchValue = searchPok.value.toUpperCase();
-    pokemonList.forEach(function(pokemon){
-      console.log(pokemon.innerText);
-      if(pokemon.innerText.toUpperCase().indexof(searchValue) > -1){
-        pokemon.style.display = '';
-      }else {
-        pokemon.style.display = none;
-      }
-    })
-  });
+      //Searching the displayed Pokemon list
+      searchPok.addEventListener('input', function(){
+      let pokemonList = document.querySelectorAll('.list-group-item');
+      let searchValue = searchPok.value.toUpperCase();
 
+        pokemonList.forEach(function(pokemon){
+        if(pokemon.innerText.toUpperCase().indexOf(searchValue) > -1){
+            pokemon.style.display = '';
+        }else{
+            pokemon.style.display = 'none';
+        }
+        })
+      });
 
   //executed funtion outside the IIFE
   return {
