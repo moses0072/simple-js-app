@@ -16,7 +16,7 @@ let pokemonRepository = (function(){
     listGroup.append(listItem);
 
     let button = $('<button data-toggle= "modal" data-target= "#pokModal"></button>');
-    button.addClass('btn btn-primary btn' );
+    button.addClass('btn btn-primary btn-lg' );
     listItem.append(button);
     button.append(pokemon.name);
     button.on('click', function(){
@@ -32,7 +32,6 @@ let pokemonRepository = (function(){
     });
   }
 
-
   //getAll execute the pokemonlist
   function getAll(){
     return pokemonList;
@@ -40,7 +39,7 @@ let pokemonRepository = (function(){
 
   function add(pokemon){
     if (typeof pokemon === 'object' &&
-    'name' in pokemon
+    'name'  in pokemon
     ){
     pokemonList.push(pokemon);
     } 
@@ -55,6 +54,7 @@ let pokemonRepository = (function(){
         let pokemon = {
           name: item.name,
           detailsUrl: item.url,
+          abilities: item.abilities,
         };
         add(pokemon);
       });
@@ -73,6 +73,8 @@ let pokemonRepository = (function(){
     item.imageUrlBack = details.sprites.back_default;
     item.height = details.height;
     item.types = details.types;
+    item.weight = details.weight;
+    item.abilities = details.abilities;
   }).catch(function (e){
     console.error(e);
   });
@@ -97,13 +99,14 @@ let pokemonRepository = (function(){
       imageElementBack.attr('src', pokemon.imageUrlBack);
 
       //get the height of the pokemon
-      let heightElement = $('<p>' + 'height: ' + pokemon.height + '</p>')
-
-    
+      let heightElement = $('<p>' + 'height: ' + pokemon.height + '</p>');
+      let weightElement = $('<p>'+ 'weight: '+ pokemon.weight + '</p>');
       modalTitel.append(nameElement);
       modalBody.append(imageElementFront);
       modalBody.append(imageElementBack);
       modalBody.append(heightElement);
+      modalBody.append(weightElement);
+    
   }
       //Searching the displayed Pokemon list
       searchPok.addEventListener('input', function(){
